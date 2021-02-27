@@ -4,7 +4,8 @@ include_once 'auth.php';
 
 if(isset($_POST['Sign_up']))
 {
-    verify_token(); 
+    // verify_token(); 
+    
     register_users();
 }
 if(isset($_POST['Sign_in']))
@@ -27,6 +28,7 @@ function register_users()
 
     $usr_pwd=$_POST['usr_password'];
     $usr_cpwd=$_POST['usr_cpassword'];
+    
     if($usr_cpwd===$usr_pwd)
     {
         $usr_password=$usr_cpwd;
@@ -46,6 +48,7 @@ function register_users()
     else{
         echo "Check the password again dude";
     }
+   
 
 }
 function login()
